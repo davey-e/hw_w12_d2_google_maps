@@ -6,11 +6,11 @@ const MapWrapper = function(container, coords, zoom){
     });
 }
 
-MapWrapper.prototype.addMarker = function(coords, title){
+MapWrapper.prototype.addMarker = function(coords, icon){
     const marker = new google.maps.Marker({
         position: coords,
         map: this.googleMap,
-        title: title
+        icon: icon
     });
     return marker;
 }

@@ -4,8 +4,9 @@ const inialize = function(){
 
     createMainMap();
 
+    const iconBase = 'http://maps.google.com/mapfiles/ms/micons/';
     const markerCoords = {lat: 57.327763, lng: -2.200318};
-    const firstMarker = mainMap.addMarker(markerCoords, "Udny Green");
+    const firstMarker = mainMap.addMarker(markerCoords, iconBase + 'ltblu-pushpin.png');
 
     const content = '<div id="content">'+
     '<h1>Udny Green</h1>'+
@@ -22,6 +23,14 @@ const inialize = function(){
     })
 
     // mainMap.addClickEvent();
+
+    const handleButtonClick = function(){
+        const coords = {lat: 55.953252, lng: -3.187938};
+        mainMap.googleMap.setCenter(coords);
+    }
+
+    const EdinburghButton = document.getElementById('button');
+    EdinburghButton.addEventListener('click', handleButtonClick);
 
 }
 
