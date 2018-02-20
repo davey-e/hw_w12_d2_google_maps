@@ -6,11 +6,20 @@ const MapWrapper = function(container, coords, zoom){
     });
 }
 
-MapWrapper.prototype.addMarker = function(coords){
+MapWrapper.prototype.addMarker = function(coords, title){
     const marker = new google.maps.Marker({
         position: coords,
-        map: this.googleMap
+        map: this.googleMap,
+        title: title
     });
+    return marker;
+}
+
+MapWrapper.prototype.createInfoWindow = function(content){
+    const infoWindow = new google.maps.InfoWindow({
+        content: content
+    });
+    return infoWindow;
 }
 
 MapWrapper.prototype.addClickEvent = function(){
